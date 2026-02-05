@@ -1,4 +1,4 @@
-// Smooth scroll para los enlaces de navegación
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -12,7 +12,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth'
             });
             
-            // Cerrar el navbar en mobile después de hacer click
+      
             const navbarCollapse = document.querySelector('.navbar-collapse');
             if (navbarCollapse.classList.contains('show')) {
                 navbarCollapse.classList.remove('show');
@@ -21,7 +21,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Cambiar el navbar al hacer scroll
+
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 100) {
@@ -33,7 +33,7 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Highlight del nav item activo
+
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -58,7 +58,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Animación fade-in para elementos cuando entran en viewport
+
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -72,7 +72,6 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// Observar elementos para animación
 document.addEventListener('DOMContentLoaded', function() {
     const elementsToAnimate = document.querySelectorAll('.team-card, .accordion-item, .card');
     elementsToAnimate.forEach(el => observer.observe(el));
